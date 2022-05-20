@@ -6,7 +6,7 @@ ticket = 0
 photo_price = 4
 icecream_price = 3
 
-if height >= 120 and height % 2 == 0:
+if height >= 120:
     print('You are eligible to ride')
     age = int(input('What is your age?\n'))
     if age <= 18:
@@ -15,9 +15,12 @@ if height >= 120 and height % 2 == 0:
     elif age <= 22:
         ticket = 12
         print(f'You have a youth ticket which is £{ticket}')
-    else:
+    elif age < 45:
         ticket = 15
         print(f'You have an adult ticket which is £{ticket}')
+    elif age >= 45 and age <= 55:
+        ticket = 0
+        print(f'You have a senior citizen ticket which is £{ticket}')
     photo = input(f'Do you want your photo taken? The price is £{photo_price} Y or N\n')
     icecream = input(f'Do you want icecream during rid? The price is £{icecream_price} Y or N\n')
     if photo == "Y" and icecream == "Y":
